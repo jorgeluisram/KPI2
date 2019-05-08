@@ -1,8 +1,35 @@
 <template>
     <div class="login">
-        <input type="text" v-model="username">
+          <section>
+            <section>
+       
+        <b-field label="Usuario"
+            type="is-success"
+            message="This username is available">
+            <b-input v-model="username" maxlength="30"></b-input>
+        </b-field>
+
+        <b-field label="Contraseña">
+            <b-input type="password"
+                v-model="password"
+                password-reveal>
+            </b-input>
+        </b-field>
+
+    </section>
+        <div class="buttons">
+            <b-button @click="login" type="is-primary">Login</b-button>
+
+        </div>
+
+
+
+
+
+    </section>
+       <!--  <input type="text" v-model="username">
         <input type="text" v-model="password">
-        <button @click="login">Login</button>
+        <button @click="login">Login</button> -->
     </div>
 </template>
 

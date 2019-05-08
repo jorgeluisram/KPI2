@@ -4,20 +4,22 @@
       <canvas id="myChart"></canvas>
     </div>
     
-    <input type="text" v-model="red">
-    <button v-on:click="deploy">Abc</button>
+    <input type="text" v-model="value">
+    <button v-on:click="add">Agregar Valor</button>
   </div>
 </template>
 
 <script>
 
 import Chart from 'chart.js';
+import { debuglog } from 'util';
 
 export default {
   name: 'HelloWorld',
   data: {
     red: 10,
-    dataa: []
+    dataValues: [],
+    value: '',
   },
   props: {
     msg: String
@@ -25,6 +27,8 @@ export default {
   methods: {
     deploy() {
       var ctx = document.getElementById('myChart');
+      //ctx.update()
+      var scope = this;
       
       var myChart = new Chart(ctx, {
           type: 'bar',
@@ -32,7 +36,7 @@ export default {
             labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
             datasets: [{
               label: '# of Votes',
-              data: [12,1,14,35,23,43],
+              data: scope.dataValues ,
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',
                   'rgba(54, 162, 235, 0.2)',
@@ -63,15 +67,27 @@ export default {
           }
       });
     },
+
+    add(){
+      this.dataValues = [];
+     var data = this.value.split(',')
+     data.forEach((val)=>{
+        val = parseInt(val);
+     });
+
+     this.dataValues = data;
+     this.deploy()
+     debugger
+    }
     
   },
   watch: {
-    red: {
-      handler: function(val){
-        this.data[1] = parseInt(val);
-      },
-      deep: true,
-    }
+    // red: {
+    //   handler: function(val){
+    //     this.data[1] = parseInt(val);
+    //   },
+    //   deep: true,
+    // }
   }
 }
 </script>
