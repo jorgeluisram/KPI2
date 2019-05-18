@@ -1,6 +1,7 @@
 
 
 <template>
+
     <div class="login">
 
          <div class="navbar-menu">
@@ -40,8 +41,10 @@
                         </form>
                     </b-dropdown-item>
                 </b-dropdown>
+               
             </div>
       </div>
+      
     </nav>
       
             

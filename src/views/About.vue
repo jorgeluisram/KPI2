@@ -1,7 +1,12 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
-    <button @click="logout">Logout</button>
+    <h1>Presione si desea salir del sistema</h1>
+    <b-button @click="logout" type="is-danger"
+              size="is-medium"
+                icon-left="exit-to-app">
+                Salir
+            </b-button>
+    
   </div>
 </template>
 

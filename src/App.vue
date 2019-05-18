@@ -17,11 +17,14 @@
       
     </section>
     <div id="nav">
-  
+   <body background="../Images/Imagen.jpg" WIDTH="100" HEIGHT="100"> 
+                </body>
       <!-- <router-link v-on:click="goToHome" to="/home">Home</router-link> 
       <router-link @click="goToAbout" to="/about">About</router-link> -->
     </div>
     <router-view/>
+    <div id="app2" background="../Images/Imagen.jpg" WIDTH="100" HEIGHT="100"> 
+    </div>
   </div>
 </template>
 
